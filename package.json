@@ -12,8 +12,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node bot.js",
+    "start": "node bot.js"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "JunhoYeo",
+  "license": "MIT"
 }
