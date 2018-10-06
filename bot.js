@@ -33,7 +33,12 @@ function getMeal(name, code, day, channelID){
         var $ = cheerio.load(html, { decodeEntities: false });
         var meal = $('tbody > tr:nth-child(2)').children('td').eq(moment().add(day, 'days').day());
         if (meal.html() == ' '){ bot.sendMessage({ to: channelID, message: '급식 정보가 없습니다.' }); }
-        else { bot.sendMessage({ to: channelID, message: meal.html() }); }
+        else { 
+            bot.sendMessage({ 
+                to: channelID, 
+                message: meal.html().replace(/([0-9]|1[0-5])\.|\(중\)/g, '').replace(/<br>/g, '\n').trim()
+            }); 
+        }
     });
     var obj = JSON.parse(fs.readFileSync('code.json', 'utf8'));
     if (!obj.hasOwnProperty(name)) {
