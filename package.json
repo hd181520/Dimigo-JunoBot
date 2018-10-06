@@ -1,0 +1,19 @@
+{
+  "name": "discord-mealbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "discord.io": "github:woor/discord.io#gateway_v6",
+    "moment": "^2.22.2",
+    "request": "^2.88.0",
+    "winston": "2.*"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
