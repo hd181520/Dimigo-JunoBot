@@ -12,7 +12,7 @@ client.on('message', msg => {
     if (msg.content === '안녕') {
         msg.reply('나도 안녕');
     }
-    else if (msg.content === '급식') {
+    else if (msg.content === '급식' || msg.content === '학식') {
         const today = new Date()
         var title = `${today.getMonth() + 1}월 ${today.getDate()}일 식단입니다.`
         request({
@@ -32,14 +32,25 @@ client.on('message', msg => {
             }).attr('href');
             request(post, function(err, response, html){
                 var $ = cheerio.load(html, { decodeEntities: false });
-                var result = title + '\n';
-                $('ul[class=scFrm]').find('li > div > div > p').each(function (index, element) {
-                    if (index%2 == 0) {
-                        result += $(element).text();
-                        if (index != 4) result += '\n'
-                    }
-                });
-                msg.channel.send(result)
+                const table = $('ul[class=scFrm] > li > div > div')
+                msg.channel.send({embed: {
+                    color: 15466636,
+                    description: `디미고 **${today.getMonth() + 1}월 ${today.getDate()}일** 학식입니다.`,
+                    fields: [
+                        {
+                            name: '아침(조식)',
+                            value: table.find('p:nth-child(1)').text().replace('조식: ', '')
+                        },
+                        {
+                            name: '점심(중식)',
+                            value: table.find('p:nth-child(3)').text().replace('중식: ', '')
+                        },
+                        {
+                            name: '저녁(석식)',
+                            value: table.find('p:nth-child(5)').text().replace('석식: ', '')
+                        }
+                    ]
+                }})
             });
         });
     }
