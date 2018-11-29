@@ -1,20 +1,24 @@
 {
-  "name": "discord-mealbot",
+  "name": "discord-junobot",
   "version": "1.0.0",
-  "description": "",
+  "description": "## auth.json ```json {     \"token\": \"BOT_TOKEN\" } ```",
   "main": "bot.js",
-  "dependencies": {
-    "cheerio": "^1.0.0-rc.2",
-    "discord.io": "github:woor/discord.io#gateway_v6",
-    "moment": "^2.22.2",
-    "request": "^2.88.0",
-    "winston": "2.*"
-  },
-  "devDependencies": {},
   "scripts": {
-    "test": "node bot.js",
-    "start": "node bot.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/junhoyeo/Discord-JunoBot.git"
   },
   "author": "JunhoYeo",
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/junhoyeo/Discord-JunoBot/issues"
+  },
+  "homepage": "https://github.com/junhoyeo/Discord-JunoBot#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "discord.js": "^11.4.2",
+    "request": "^2.88.0"
+  }
 }
