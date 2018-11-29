@@ -27,19 +27,21 @@ client.on('message', msg => {
                 return; 
             }
             var $ = cheerio.load(html, { decodeEntities: false });
-            $('tbody[id=dimigo_post_cell_2]').find('tr > td[class=title] > div > a').each(function (index, element) {
-                if ($(element).text() == title) {
-                    var post = $(element).attr('href');
-                    request(post, function(err, response, html){
-                        var $ = cheerio.load(html, { decodeEntities: false });
-                        $('ul[class=scFrm]').find('li > div > div > p').each(function (index, element) {
-                            msg.channel.send($(element).text())
-                        });
-                    });
-                }
+            var post = $('tbody[id=dimigo_post_cell_2] > tr > td[class=title] > div > a').filter(function() {
+                return $(this).text().trim() === title;
+            }).attr('href');
+            request(post, function(err, response, html){
+                var $ = cheerio.load(html, { decodeEntities: false });
+                var result = title + '\n';
+                $('ul[class=scFrm]').find('li > div > div > p').each(function (index, element) {
+                    if (index%2 == 0) {
+                        result += $(element).text();
+                        if (index != 4) result += '\n'
+                    }
+                });
+                msg.channel.send(result)
             });
         });
-        msg.channel.send(title);
     }
 });
 
