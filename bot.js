@@ -9,7 +9,10 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-    if (msg.content === '급식') {
+    if (msg.content === '안녕') {
+        msg.reply('나도 안녕');
+    }
+    else if (msg.content === '급식') {
         const today = new Date()
         var title = `${today.getMonth() + 1}월 ${today.getDate()}일 식단입니다.`
         request({
