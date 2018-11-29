@@ -1,4 +1,4 @@
-# Discord Chatbot with Node.js
+# JUNO
 
 ## auth.json
 ```json
