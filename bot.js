@@ -69,7 +69,7 @@ client.on('message', msg => {
                 
                 msg.channel.send({embed: {
                     color: 10104574,
-                    description: `오늘 ${weather_info.hour[0]}시 기준 **경기도 안산시 단원구 와동** 날씨입니다.`,
+                    description: `오늘 ${weather_info.hour[0]}시 기준 **경기도 안산시 단원구 와동** 날씨(예상)입니다.`,
                     fields: [
                         {
                             name: '현재 온도',
