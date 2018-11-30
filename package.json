@@ -1,24 +1,25 @@
 {
-  "name": "discord-junobot",
+  "name": "dimigo-junobot",
   "version": "1.0.0",
-  "description": "## auth.json ```json {     \"token\": \"BOT_TOKEN\" } ```",
+  "description": "Dimigo discord bot, JUNO",
   "main": "bot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/junhoyeo/Discord-JunoBot.git"
+    "url": "git+https://github.com/junhoyeo/Dimigo-JunoBot.git"
   },
   "author": "JunhoYeo",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/junhoyeo/Discord-JunoBot/issues"
+    "url": "https://github.com/junhoyeo/Dimigo-JunoBot/issues"
   },
-  "homepage": "https://github.com/junhoyeo/Discord-JunoBot#readme",
+  "homepage": "https://github.com/junhoyeo/Dimigo-JunoBot#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "discord.js": "^11.4.2",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "xml2js": "^0.4.19"
   }
 }
