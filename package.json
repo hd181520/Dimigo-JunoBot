@@ -4,7 +4,7 @@
   "description": "Dimigo discord bot, JUNO",
   "main": "bot.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node bot.js"
   },
   "repository": {
     "type": "git",
