@@ -4,7 +4,7 @@
   "description": "Dimigo discord bot, JUNO",
   "main": "bot.js",
   "scripts": {
-    "start": "node bot.js"
+    "start": "node src/bot.js"
   },
   "repository": {
     "type": "git",
