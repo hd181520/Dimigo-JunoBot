@@ -17,8 +17,21 @@ client.on('message', msg => {
     else if (msg.content === '?') {
         msg.reply('?');
     }
-    else if (msg.content === '사랑해') {
+    else if (msg.content.includes('사랑해')) {
         msg.reply('사랑해');
+    }
+    else if (msg.content.includes('귀여워')) {
+        switch (Math.floor((Math.random() * 3) + 1)) {
+            case 1:
+                msg.reply('너도 귀여워')
+                break;                
+            case 2:
+                msg.reply('헤헤')
+                break;
+            default:
+                msg.reply('내가 좀 귀엽지')
+                break;
+        }
     }
     else if (msg.content === '급식' || msg.content === '학식') {
         const today = new Date()
